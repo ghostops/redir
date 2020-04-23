@@ -1,6 +1,6 @@
-import ping from 'functions/ping';
+import redirect from 'functions/redirect';
 
 // Export all exposed functions
 export default {
-    ping,
+    redirect,
 };

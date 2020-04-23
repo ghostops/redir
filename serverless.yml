@@ -1,22 +1,29 @@
-service: "[REPLACE_ME]"
+service: "redirect"
 
 provider:
   name: aws
-  runtime: nodejs8.10
-  stage: ${opt:stage, 'dev'} # dev or live
+  runtime: nodejs10.x
+  stage: ${custom:stage, 'dev'} # dev or live
   region: eu-west-1
 
 functions:
-  ping:
-    handler: handler.ping
+  redirect:
+    handler: handler.redirect
     events:
       - http:
-          path: health
+          path: /
           method: get
           cors: true
 
 custom:
   stage: ${opt:stage, self:provider.stage}
 
+  customDomain:
+    domainName: 'redirect.ghst.co'
+    basePath: ''
+    stage: ${opt:stage, self:provider.stage}
+    createRoute53Record: false
+
 plugins:
   - serverless-offline
+  - serverless-domain-manager

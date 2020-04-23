@@ -8,10 +8,8 @@
     "private": true,
     "scripts": {
         "start": "yarn build --watch & serverless offline",
-        "deploy": "yarn build && yarn deploy-dev",
-        "deploy-dev": "serverless deploy --aws-profile jf_dev --stage dev",
-        "deploy-prod": "serverless deploy --aws-profile jf_live --stage live",
         "build": "babel ./src --out-dir build --extensions '.ts,.tsx'",
+        "deploy": "serverless deploy",
         "tsfix": "yarn tslint --fix --project ./"
     },
     "devDependencies": {
@@ -28,6 +26,7 @@
         "@types/lodash": "^4.14.119",
         "@types/node": "^10.12.18",
         "babel-plugin-module-resolver": "^3.1.1",
+        "serverless-domain-manager": "^3.3.2",
         "serverless-offline": "^5.0.1",
         "tslint": "^5.12.0",
         "tslint-config-airbnb": "^5.11.1",
