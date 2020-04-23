@@ -1,0 +1,22 @@
+service: "[REPLACE_ME]"
+
+provider:
+  name: aws
+  runtime: nodejs8.10
+  stage: ${opt:stage, 'dev'} # dev or live
+  region: eu-west-1
+
+functions:
+  ping:
+    handler: handler.ping
+    events:
+      - http:
+          path: health
+          method: get
+          cors: true
+
+custom:
+  stage: ${opt:stage, self:provider.stage}
+
+plugins:
+  - serverless-offline

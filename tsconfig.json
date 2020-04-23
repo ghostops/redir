@@ -1,0 +1,26 @@
+{
+    "compilerOptions": {
+      "emitDecoratorMetadata": true,
+      "experimentalDecorators": true,
+      "moduleResolution": "node",
+      "module": "commonjs",
+      "target": "es6",
+      "sourceMap": false,
+      "noImplicitAny": false,
+      "watch": false,
+      "allowJs": false,
+      "baseUrl": "src",
+      "lib": ["es7"],
+      "rootDir": "./src",
+      "outDir": "./build",
+      "paths": {
+        "*": ["*", "./*"]
+      },
+      "forceConsistentCasingInFileNames": true,
+      "skipLibCheck": true
+    },
+    "include": ["./src/**/*"],
+    "exclude": [
+      "node_modules"
+    ]
+  }
