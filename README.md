@@ -1,4 +1,4 @@
-# Redirect Webiste
+# Redirect Website
 
 This is a Lambda function for redirecting webistes.
 
