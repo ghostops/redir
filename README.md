@@ -1,5 +1,5 @@
-# Serverless Starter
+# Redirect Webiste
 
-**Before starting development!**
+This is a Lambda function for redirecting webistes.
 
-In `serverless.yml` edit the `[REPLACE_ME]` string with the real name of your application.
+Drawback is that HTTPS will not work for just any domain on AWS.
